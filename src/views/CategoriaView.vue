@@ -3,7 +3,7 @@ import { ref, reactive, onMounted } from "vue";
 import CategoriasApi from "@/api/categorias";
 const categoriasApi = new CategoriasApi();
 
-const defaultCategoria = { id: null, descricao: "" };
+const defaultCategoria = { id: null, nome: "" };
 const categorias = ref([]);
 const categoria = reactive({ ...defaultCategoria });
 
@@ -40,7 +40,7 @@ async function excluir(id) {
   <h1>Categoria</h1>
   <hr />
   <div class="form">
-    <input type="text" v-model="categoria.descricao" placeholder="Descrição" />
+    <input type="text" v-model="categoria.nome" placeholder="Descrição" />
     <button @click="salvar">Salvar</button>
     <button @click="limpar">Limpar</button>
   </div>
@@ -48,7 +48,7 @@ async function excluir(id) {
   <ul>
     <li v-for="categoria in categorias" :key="categoria.id">
       <span @click="editar(categoria)">
-        ({{ categoria.id }}) - {{ categoria.descricao }} -
+        ({{ categoria.id }}) - {{ categoria.nome }} -
       </span>
       <button @click="excluir(categoria.id)">X</button>
     </li>

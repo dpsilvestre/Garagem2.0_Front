@@ -18,6 +18,31 @@ const router = createRouter({
       component: CategoriaView,
     },
     {
+      path: "/modelos",
+      name: "modelos",
+      component: () => import("../views/ModeloView.vue"),
+    },
+    {
+      path: "/marcas",
+      name: "marcas",
+      component: () => import("../views/MarcaView.vue"),
+    },
+    {
+      path: "/acessorios",
+      name: "acessorios",
+      component: () => import("../views/AcessorioView.vue"),
+    },
+    {
+      path: "/cores",
+      name: "cores",
+      component: () => import("../views/CorView.vue"),
+    },
+    {
+      path: "/veiculos",
+      name: "veiculos",
+      component: () => import("../views/VeiculoView.vue"),
+    },
+    {
       path: "/login",
       name: "login",
       component: LoginView,
